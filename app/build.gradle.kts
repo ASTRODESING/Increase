@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.astrodesing.increase"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.astrodesing.increase"
@@ -35,6 +35,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        viewBinding = true
+    }
+    viewBinding{
+        enable=true
+    }
 }
 
 dependencies {
@@ -42,6 +48,8 @@ dependencies {
     val splashScreenVersion = "1.0.1"
     val daggerHiltVersion = "2.51"
     val lifecicleVersion = "2.7.0"
+    val activityVersion = "1.8.2"
+    val fragmentVersion = "1.6.2"
 
     //Splash Creen Dependency
     implementation("androidx.core:core-splashscreen:$splashScreenVersion")
@@ -54,6 +62,13 @@ dependencies {
     ksp("com.google.dagger:hilt-android-compiler:2.51")
     //Lifecycle
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecicleVersion")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecicleVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecicleVersion")
+    //Activity
+    implementation("androidx.activity:activity-ktx:$activityVersion")
+    //Fragment
+    implementation("androidx.fragment:fragment-ktx:$fragmentVersion")
+
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
