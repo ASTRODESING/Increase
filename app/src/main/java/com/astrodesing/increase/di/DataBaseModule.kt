@@ -18,8 +18,8 @@ object DataBaseModule {
     //PROVEEDOR DE LA BASE DE DATOS
     @Singleton
     @Provides
-    fun provideBasedata(@ApplicationContext context: Context){
-        Room.databaseBuilder(context, Database::class.java, DATABASE_NAME).build()
+    fun provideBasedata(@ApplicationContext context: Context): Database {
+        return Room.databaseBuilder(context, Database::class.java, DATABASE_NAME).build()
     }
 
 

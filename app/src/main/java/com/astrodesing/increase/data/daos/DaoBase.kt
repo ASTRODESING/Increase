@@ -13,10 +13,10 @@ interface DaoBase {
     suspend fun addUser( user:EntitiesBase)
 
     @Query("SELECT * FROM base_data")
-    fun readAllData(): LiveData<List<EntitiesBase>>
+    fun readAllData(): List<EntitiesBase>
 
-    @Query("SELECT * FROM base_data WHERE id=1")
-    fun readFirstUserData():LiveData<List<EntitiesBase>>
+    @Query("SELECT * FROM base_data WHERE id=0")
+    fun readFirstUserData():List<EntitiesBase>
 
     @Query("Update base_data set first_init_aplication = :firstinit WHERE id=1 ")
     fun updateFirtsInit(firstinit:Boolean=true)
