@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5">
 
         <com.google.android.material.textfield.TextInputEditText
-
+            android:id="@+id/ingresoMensual"
             android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:inputType="number"
@@ -135,6 +135,7 @@
         app:layout_constraintTop_toBottomOf="@id/gasto1">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/gastoMensual"
             android:layout_width="370dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/malmnormal"
