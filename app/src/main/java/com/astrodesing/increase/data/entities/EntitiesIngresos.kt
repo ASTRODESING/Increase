@@ -33,7 +33,7 @@ data class EntitiesCategorias(
     ) val nombreCategoria: String
 )
 
-fun EntitiesCategorias.toDomain() = Categorias(id = id, nombreCategoria = nombreCategoria)
+fun EntitiesCategorias.toDomain() = Categorias(nombreCategoria = nombreCategoria)
 
 data class IngresosPorCategorias(
     @Embedded val categoria: EntitiesCategorias,
