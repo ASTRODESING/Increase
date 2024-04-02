@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background_01"
+    >
+
+
+    <ImageView
+        android:layout_width="333dp"
+        android:layout_height="848dp"
+        android:layout_marginEnd="-170dp"
+        android:layout_marginBottom="-190dp"
+        android:alpha="0.02"
+        android:rotation="-90"
+        android:src="@drawable/ic_branding_splashscreen_android"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/white" />
+
+    <View
+        android:id="@+id/wave"
+        android:elevation="6dp"
+        android:layout_width="500dp"
+        android:layout_height="250dp"
+        android:background="@drawable/ic_ui_curve_top"
+        android:rotation="180"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/bienvenida"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/malmwidebold"
+        android:text="@string/forms_welcome"
+        android:textAllCaps="true"
+        android:textColor="@color/secondary"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/malmnormal"
+        android:text="@string/forms_lema"
+        android:textColor="@color/white_secondary"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bienvenida" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="4dp"
+        android:elevation="20dp"
+        android:src="@drawable/ic_image_splashscreen_android"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:tint="@color/white_secondary"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="332dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="68dp"
+        android:fontFamily="@font/malmnormalbold"
+        android:text="@string/forms_welcome_subtitle01"
+        android:textAllCaps="true"
+        android:textColor="@color/secondary"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wave" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="332dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/malmnormal"
+        android:justificationMode="inter_word"
+        android:text="@string/forms_welcome_intro"
+        android:textColor="@color/white_secondary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <Button
+        android:id="@+id/btn_nextform_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="150dp"
+        android:background="@drawable/ic_ui_button"
+        android:fontFamily="@font/malmnormalbold"
+        android:paddingHorizontal="90dp"
+        android:paddingVertical="15dp"
+        android:text="@string/btn_continue"
+        android:textColor="@color/primary"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="@font/malmwidebold"
+        android:justificationMode="inter_word"
+        android:text="1   /   3"
+        android:textColor="@color/white_secondary"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

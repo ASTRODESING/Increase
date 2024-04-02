@@ -11,8 +11,7 @@ data class EntitiesBase(
     @PrimaryKey(autoGenerate = true)
     val id: Int? = 0,
     @ColumnInfo(name = "first_name", defaultValue = "Empty") val userName: String,
-    @ColumnInfo(name = "age", defaultValue = "18") val userAge: Int,
-    @ColumnInfo(name = "first_init_aplication", defaultValue = "false") val userFirstInit: Boolean
+    @ColumnInfo(name = "age", defaultValue = "18") val userAge: Int
 )
 
-fun Base.todatabase() = EntitiesBase(userName = userName, userAge = userAge,userFirstInit = userFirstInit)
+fun Base.todatabase() = EntitiesBase(userName = userName, userAge = userAge,)

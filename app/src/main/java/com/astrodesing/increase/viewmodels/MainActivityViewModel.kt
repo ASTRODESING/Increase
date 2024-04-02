@@ -18,15 +18,7 @@ class MainActivityViewModel @Inject constructor(private val repositorioBase: rep
     ViewModel() {
 
 
-    var userName: String = ""
-    var userAge: Int = 18
 
-
-    fun addUser(user: Base) {
-        viewModelScope.launch {
-            repositorioBase.createUser(user)
-        }
-    }
 
     suspend fun isFirstInit(): List<Base> {
 
@@ -34,6 +26,7 @@ class MainActivityViewModel @Inject constructor(private val repositorioBase: rep
             return@async repositorioBase.readFirtUser()
         }
         return firstinit.await()
+
 
 
     }

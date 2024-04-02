@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Increase</string>
+    <string name="forms_welcome">¡Bienvenido a Increase!</string>
+    <string name="forms_lema">Tu primer paso a la organización financiera</string>
+    <string name="btn_continue">Continuar</string>
+    <string name="forms_welcome_subtitle01">Tener una organización financiera personal efectiva conlleva numerosas bondades.</string>
+    <string name="forms_welcome_intro"> Permite tener un mayor control sobre nuestras finanzas, lo que nos brinda tranquilidad y seguridad. Al tener un plan financiero bien estructurado, podemos establecer metas y objetivos realistas que nos ayuden a alcanzar nuestra estabilidad económica a largo plazo.</string>
+    <string name="forms_title_secondform">Antes de impulsarte, necesitamos cierta información para comenzar.</string>
+    <string name="forms_title2_secondform">No te preocupes, esta información solo es almacenada en tu dispositivo actual, ninguna informacion que suministres sera utilizada para fines externos a la aplicacion</string>
+    <string name="forms_title1_thirdform">“No ahorres lo que queda después de gastar, sino gasta lo que queda después de ahorrar.”</string>
+    <string name="forms_fields1_secondform">Dinos tu nombre</string>
+    <string name="forms_fields2_secondform">¿Que edad tienes?</string>
+    <string name="forms_fields1_thirdform">¿Cuanto es tu ingreso mensual?</string>
+    <string name="forms_fields2_thirdform">¿Cual es tu tipo de ingreso?</string>
+    <string name="forms_fields3_thirdform">¿Cuanto es tu gasto mensual?</string>
+    <string name="forms_fields4_thirdform">¿Cual es tu tipo de gasto?</string>
+    <string name="forms_hint01_secondform">Tu nombre</string>
+    <string name="forms_hint02_secondform">Tu edad</string>
+    <string name="forms_hint01_thirdform">Cantidad de Ingreso preferible en dolar</string>
+    <string name="forms_hint03_thirdform">Cantidad de Gasto preferible en dolar</string>
+    <string name="forms_hint02_thirdform">Seleccione</string>
 </resources>
