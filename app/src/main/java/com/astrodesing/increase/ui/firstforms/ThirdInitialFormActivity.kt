@@ -1,18 +1,20 @@
 package com.astrodesing.increase.ui.firstforms
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.astrodesing.increase.databinding.ActivityThirdInitialFormBinding
-import com.astrodesing.increase.model.Categorias
 import com.astrodesing.increase.model.Ingresos
-import com.astrodesing.increase.viewmodels.SecondInitialFormViewModel
+import com.astrodesing.increase.ui.dashboard.DashboardActivity
 import com.astrodesing.increase.viewmodels.ThirdInitialFormViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -48,13 +50,20 @@ class ThirdInitialFormActivity : AppCompatActivity() {
                 binding.actvIngresosMode.text.toString().isNotEmpty()
             ) {
                 CoroutineScope(Dispatchers.IO).launch {
-                    thirdInitialFormViewModel.addCategoria(Categorias(nombreCategoria = "Salario"))
                     thirdInitialFormViewModel.addIngreso(
                         Ingresos(
                             cantidad = binding.ingresoMensual.text.toString().toDouble(),
-                            categoryId =0,
-                            fecha = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyy")))
+                            categoryId = 0,
+                            description = "Primer Ingreso",
+                            fecha = LocalDateTime.now()
+                                .format(DateTimeFormatter.ofPattern("dd/MM/yyy")),
+                            modalidad = binding.actvIngresosMode.text.toString()
+                        )
                     )
+                    runOnUiThread(){
+                        val intent = Intent(this@ThirdInitialFormActivity, DashboardActivity::class.java)
+                        startActivity(intent)
+                    }
 
                 }
 
@@ -69,11 +78,19 @@ class ThirdInitialFormActivity : AppCompatActivity() {
 
 
     private fun initLists() {
-        val spinnerItems = listOf("Quincenal", "Mensual", "Pagos Irregulares")
-        val adapterSpinner =
-            ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item)
-        adapterSpinner.addAll(spinnerItems)
-        binding.actvIngresosMode.setAdapter(adapterSpinner)
-        binding.actvGastosMode.setAdapter(adapterSpinner)
+        CoroutineScope(Dispatchers.IO).launch {
+            val modalidades = thirdInitialFormViewModel.getModalidades()
+            runOnUiThread(){
+                var spinnerItems:MutableList<String> = mutableListOf()
+                for (modalidad in modalidades){
+                    spinnerItems.add(modalidad.modalidad)
+                }
+                val adapterSpinner =
+                    ArrayAdapter<String>(this@ThirdInitialFormActivity, android.R.layout.simple_spinner_dropdown_item)
+                adapterSpinner.addAll(spinnerItems)
+                binding.actvIngresosMode.setAdapter(adapterSpinner)
+                binding.actvGastosMode.setAdapter(adapterSpinner)
+            }
+        }
     }
 }

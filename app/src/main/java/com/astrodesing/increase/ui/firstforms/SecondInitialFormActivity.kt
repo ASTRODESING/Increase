@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
+import com.astrodesing.increase.data.entities.EntitiesModalidades
 import com.astrodesing.increase.databinding.ActivitySecondInitialFormBinding
 import com.astrodesing.increase.model.Base
+import com.astrodesing.increase.model.Categorias
 import com.astrodesing.increase.viewmodels.SecondInitialFormViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -29,8 +31,18 @@ class SecondInitialFormActivity : AppCompatActivity() {
 
     private fun initUi() {
         binding.btnNextform02.setOnClickListener() {
+            initializeDatabase()
             addUser()
+        }
+    }
 
+    private fun initializeDatabase() {
+        CoroutineScope(Dispatchers.IO).launch{
+            secondInitialFormViewModel.addModalidad(EntitiesModalidades(modalidad = "Quincenal"))
+            secondInitialFormViewModel.addModalidad(EntitiesModalidades(modalidad = "Mensual"))
+            secondInitialFormViewModel.addModalidad(EntitiesModalidades(modalidad = "Semanal"))
+            secondInitialFormViewModel.addModalidad(EntitiesModalidades(modalidad = "Pagos Irregulares"))
+            secondInitialFormViewModel.addCategoria(Categorias(nombreCategoria = "Salario"))
         }
     }
 

@@ -14,33 +14,48 @@ import com.astrodesing.increase.model.IngresosPorCategoriaDomain
 @Entity(tableName = "ingresos")
 data class EntitiesIngresos(
     @PrimaryKey(autoGenerate = true)
-    val id: Int? = 0,
+    val id: Int?,
     @ColumnInfo(name = "cantidad", defaultValue = "0") val cantidad: Double,
-    @PrimaryKey @ColumnInfo(name = "categoria", defaultValue = "1") val categoryId: Int,
-    @ColumnInfo(name = "fecha") val fecha: String
+    @ColumnInfo(name = "categoria", defaultValue = "0") val categoryId: Int,
+    @ColumnInfo(name = "descripción", defaultValue = "Sin descripción") val description: String,
+    @ColumnInfo(name = "fecha") val fecha: String,
+    @ColumnInfo(name = "modalidad", defaultValue = "0") val modalidad: String
 )
 
 fun EntitiesIngresos.toDomain() =
-    Ingresos(cantidad = cantidad, categoryId = categoryId, fecha = fecha)
+    Ingresos(
+        cantidad = cantidad,
+        categoryId = categoryId,
+        description = description,
+        fecha = fecha,
+        modalidad = modalidad
+    )
 
 @Entity(tableName = "categorias", indices = [Index(value = ["nombreCategoria"], unique = true)])
 data class EntitiesCategorias(
     @PrimaryKey(autoGenerate = true)
-    val id: Int? = 0,
-    @ColumnInfo(
-        name = "nombreCategoria",
-        defaultValue = "Sin Categoria"
-    ) val nombreCategoria: String
+    @ColumnInfo(name = "id")
+    val id: Int?,
+    @ColumnInfo(name = "nombreCategoria") val nombreCategoria: String
 )
 
 fun EntitiesCategorias.toDomain() = Categorias(nombreCategoria = nombreCategoria)
 
+
 data class IngresosPorCategorias(
     @Embedded val categoria: EntitiesCategorias,
     @Relation(
-        parentColumn = "categoryId",
-        entityColumn = "nombreCategoria"
+        parentColumn = "id",
+        entityColumn = "categoria",
     )
     val ingresos: List<EntitiesIngresos>
 )
 
+data class IngresosPorModalidad(
+    @Embedded val modalidad: EntitiesModalidades,
+    @Relation(
+        parentColumn = "id",
+        entityColumn = "modalidad",
+    )
+    val ingresos: List<EntitiesIngresos>
+)

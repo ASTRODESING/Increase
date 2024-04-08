@@ -7,4 +7,4 @@ data class Categorias (
     val nombreCategoria: String
 )
 
-fun Categorias.toDatabase()= EntitiesCategorias(nombreCategoria=nombreCategoria)
+fun Categorias.toDatabase()= EntitiesCategorias(id = null,nombreCategoria=nombreCategoria)

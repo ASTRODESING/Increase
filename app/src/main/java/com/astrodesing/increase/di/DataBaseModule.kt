@@ -27,4 +27,13 @@ object DataBaseModule {
     @Provides
     fun provideBaseDaos(db:Database) = db.getDaoBase()
 
+    @Singleton
+    @Provides
+    fun provideIngresosDaos(db: Database) = db.getDaoIngresos()
+
+    @Singleton
+    @Provides
+    fun provideModalidadesDaos(db: Database) = db.getModalidades()
+
+
 }
