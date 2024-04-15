@@ -1,9 +1,22 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
     <!-- Base application theme. -->
     <style name="Base.Theme.Increase" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
+    <style name="Cardview_Dashboard" parent="CardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_marginHorizontal">16dp</item>
+        <item name="cardCornerRadius">20dp</item>
+    </style>
+
+    <style name="Light_Text" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/white_secondary </item>
+        <item name="fontFamily">@font/malmnormalbold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
     <style name="Theme.Increase" parent="Base.Theme.Increase" />
 </resources>

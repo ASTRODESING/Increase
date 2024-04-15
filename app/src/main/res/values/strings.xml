@@ -24,6 +24,11 @@
     <string name="dashboard_title02">Ingreso mas Relevante</string>
     <string name="dashboard_hint01">Añadir\nIngreso</string>
     <string name="dashboard_hint02">Añadir\nGasto</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dashboard_hint03">Meta Principal</string>
+    <string name="dashboard_hint04">Gastos Por Pagar Este Mes</string>
+    <string name="dashboard_hint05">Ingresos por cobrar</string>
+    <string name="dashboard_Subtitle01">Tiempo Estimado</string>
+    <string name="dashboard_Subtitle02">Dinero Restante</string>
+    <string name="dashboard_Subtitle03">Tiempo Restante</string>
+    <string name="dashboard_Subtitle04">Monto Deuda A Pagar</string>
 </resources>

@@ -72,6 +72,10 @@ dependencies {
     //Fragment
     implementation("androidx.fragment:fragment-ktx:$fragmentVersion")
     implementation("androidx.navigation:navigation-ui-ktx:$navigationUi")
+    implementation("androidx.navigation:navigation-fragment-ktx:$navigationUi")
+    // Feature module Support
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:$navigationUi")
+    //
     //Location Tracker
     implementation("com.google.android.gms:play-services-location:$location")
 

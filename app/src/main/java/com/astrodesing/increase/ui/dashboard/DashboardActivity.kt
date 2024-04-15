@@ -29,15 +29,15 @@ class DashboardActivity : AppCompatActivity() {
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
                 add<DashboardWelcomeFragment>(
-                    R.id.fragment_container_dashboard,
+                    R.id.navHostFragment,
                     args = bundle
                 ) //El view Binding por alguna razon no funciona, se tiene que utilizar R
             }
         }
-        initUi()
+       /* initUi()*/
     }
 
-    private fun initUi() {
+ /*   private fun initUi() {
 
-    }
+    }*/
 }
