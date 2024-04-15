@@ -44,12 +44,15 @@ android {
 }
 
 dependencies {
+    implementation("com.google.android.gms:play-services-location:21.2.0")
     val roomVersion = "2.6.1"
     val splashScreenVersion = "1.0.1"
     val daggerHiltVersion = "2.51"
     val lifecicleVersion = "2.7.0"
     val activityVersion = "1.8.2"
     val fragmentVersion = "1.6.2"
+    val navigationUi = "2.7.7"
+    val location ="21.2.0"
 
     //Splash Creen Dependency
     implementation("androidx.core:core-splashscreen:$splashScreenVersion")
@@ -68,6 +71,10 @@ dependencies {
     implementation("androidx.activity:activity-ktx:$activityVersion")
     //Fragment
     implementation("androidx.fragment:fragment-ktx:$fragmentVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navigationUi")
+    //Location Tracker
+    implementation("com.google.android.gms:play-services-location:$location")
+
 
 
     implementation("androidx.core:core-ktx:1.9.0")

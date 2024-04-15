@@ -19,4 +19,11 @@
     <string name="forms_hint01_thirdform">Cantidad de Ingreso preferible en dolar</string>
     <string name="forms_hint03_thirdform">Cantidad de Gasto preferible en dolar</string>
     <string name="forms_hint02_thirdform">Seleccione</string>
+    <string name="dashboard_welcome">¡Bienvenido!</string>
+    <string name="dashboard_title01">Ganancias esperadas \neste mes</string>
+    <string name="dashboard_title02">Ingreso mas Relevante</string>
+    <string name="dashboard_hint01">Añadir\nIngreso</string>
+    <string name="dashboard_hint02">Añadir\nGasto</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

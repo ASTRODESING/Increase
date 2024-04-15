@@ -13,4 +13,7 @@
 
     <color name="secondary">#2bae7c</color>
     <color name="secondary_dark">#0C2117</color>
+
+    <color name="error">#AE2B3A</color>
+    <color name="transparent">#00000000</color>
 </resources>
