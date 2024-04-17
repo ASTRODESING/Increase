@@ -28,7 +28,10 @@
     <string name="dashboard_hint04">Gastos Por Pagar Este Mes</string>
     <string name="dashboard_hint05">Ingresos por cobrar</string>
     <string name="dashboard_Subtitle01">Tiempo Estimado</string>
+    <string name="dashboard_Subtitle05">Salario/Por cobrar</string>
     <string name="dashboard_Subtitle02">Dinero Restante</string>
     <string name="dashboard_Subtitle03">Tiempo Restante</string>
     <string name="dashboard_Subtitle04">Monto Deuda A Pagar</string>
+    <string name="menu_title01">Dashboard</string>
+    <string name="menu_title02">Añadir</string>
 </resources>

@@ -6,9 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.astrodesing.increase.R
+import com.astrodesing.increase.databinding.FragmentDashboardWelcomeBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
 class DashboardWelcomeFragment : Fragment() {
     private var name: String? = null
     private var address: String? = null
+    private lateinit var binding:FragmentDashboardWelcomeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +21,11 @@ class DashboardWelcomeFragment : Fragment() {
             name = it.getString(FRAGMENT_NAME)
             address = it.getString(FRAGMENT_ADDRESS)
         }
+
+        binding= FragmentDashboardWelcomeBinding.inflate(layoutInflater)
+
+
+
     }
 
     override fun onCreateView(

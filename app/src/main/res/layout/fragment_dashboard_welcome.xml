@@ -347,7 +347,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/tiempo_restante_gasto" />
 
                     <TextView
-                        android:id="@+id/meta_tiempo_estimado"
+                        android:id="@+id/gastos_tiempo_estimado"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
@@ -362,12 +362,12 @@
                         android:id="@+id/monto_deuda_a_pagar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="9dp"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
                         android:fontFamily="@font/malmnormalbold"
                         android:textColor="@color/white_secondary"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/meta_tiempo_estimado"
+                        app:layout_constraintTop_toBottomOf="@+id/gastos_tiempo_estimado"
                         tools:text="225151531$" />
 
 
@@ -416,7 +416,55 @@
                         android:textColor="@color/white_secondary"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/view4"
-                        tools:text="Titulo del ingreso" />
+                        tools:text="Titulo del ingreso"/>
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="24dp"
+                        android:fontFamily="@font/malmnormal"
+                        android:text="@string/dashboard_Subtitle01"
+                        android:textColor="@color/white_secondary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/malmnormal"
+                        android:text="@string/dashboard_Subtitle05"
+                        android:textColor="@color/white_secondary"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+                    <TextView
+                        android:id="@+id/ingreso_tiempo_estimado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/malmnormalbold"
+                        android:textColor="@color/white_secondary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/title_ingreso"
+                        tools:text="2M / 1W / 3D" />
+
+                    <TextView
+                        android:id="@+id/ingreso_monto_estimado"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:fontFamily="@font/malmnormalbold"
+                        android:textColor="@color/white_secondary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/ingreso_tiempo_estimado"
+                        tools:text="2M / 1W / 3D" />
+
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,5 +9,22 @@
         android:id="@+id/dashboardWelcomeFragment"
         android:name="com.astrodesing.increase.ui.dashboard.DashboardWelcomeFragment"
         android:label="fragment_dashboard_welcome"
-        tools:layout="@layout/fragment_dashboard_welcome" />
+        tools:layout="@layout/fragment_dashboard_welcome" >
+        <action
+            android:id="@+id/action_dashboardWelcomeFragment_to_addIngresoFragment"
+            app:destination="@id/addIngresoFragment" />
+        <action
+            android:id="@+id/action_dashboardWelcomeFragment_to_addGastoFragment"
+            app:destination="@id/addGastoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addIngresoFragment"
+        android:name="com.astrodesing.increase.AddIngresoFragment"
+        android:label="fragment_add_ingreso"
+        tools:layout="@layout/fragment_add_ingreso" />
+    <fragment
+        android:id="@+id/addGastoFragment"
+        android:name="com.astrodesing.increase.AddGastoFragment"
+        android:label="fragment_add_gasto"
+        tools:layout="@layout/fragment_add_gasto" />
 </navigation>
