@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/addIngresoFragment"
-        android:name="com.astrodesing.increase.AddIngresoFragment"
+        android:name="com.astrodesing.increase.ui.dashboard.AddIngresoFragment"
         android:label="fragment_add_ingreso"
         tools:layout="@layout/fragment_add_ingreso" />
     <fragment
         android:id="@+id/addGastoFragment"
-        android:name="com.astrodesing.increase.AddGastoFragment"
+        android:name="com.astrodesing.increase.ui.dashboard.AddGastoFragment"
         android:label="fragment_add_gasto"
         tools:layout="@layout/fragment_add_gasto" />
 </navigation>

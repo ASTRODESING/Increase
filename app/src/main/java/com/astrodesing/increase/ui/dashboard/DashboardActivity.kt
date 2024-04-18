@@ -10,25 +10,26 @@ import com.astrodesing.increase.R
 import com.astrodesing.increase.databinding.ActivityDashboardBinding
 import com.astrodesing.increase.ui.dashboard.DashboardWelcomeFragment.Companion.FRAGMENT_ADDRESS
 import com.astrodesing.increase.ui.dashboard.DashboardWelcomeFragment.Companion.FRAGMENT_NAME
+import com.astrodesing.increase.viewmodels.dashboardviewmodels.DashboardWelcomeFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
+
 @AndroidEntryPoint
 class DashboardActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityDashboardBinding
-    /*val dashboardViewModel:DashboardViewModel by viewModels<DashboardViewModel>()*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
-       initUi(savedInstanceState)
+        initUi(savedInstanceState)
     }
 
-    private fun initUi(savedInstanceState:Bundle?) {
+    private fun initUi(savedInstanceState: Bundle?) {
         initFragments(savedInstanceState)
     }
 
-    private fun initFragments(savedInstanceState:Bundle?) {
+    private fun initFragments(savedInstanceState: Bundle?) {
 
         if (savedInstanceState == null) {
             val bundle =
@@ -44,5 +45,5 @@ class DashboardActivity : AppCompatActivity() {
         }
     }
 
-   
+
 }
