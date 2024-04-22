@@ -44,10 +44,12 @@ class MainActivity : AppCompatActivity() {
                     * SE INICIA*/
                     val intent = Intent(this@MainActivity, DashboardActivity::class.java)
                     startActivity(intent)
+                    finish()
 
                 } else {
                     val intent = Intent(this@MainActivity, FirstInitialFormActivity::class.java)
                     startActivity(intent)
+                    finish()
 
 
                 }

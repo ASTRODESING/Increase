@@ -31,6 +31,7 @@ class DashboardActivity : AppCompatActivity() {
 
     private fun initFragments(savedInstanceState: Bundle?) {
 
+
         if (savedInstanceState == null) {
             val bundle =
                 bundleOf(FRAGMENT_NAME to "DashboardWelcomeFragment", FRAGMENT_ADDRESS to "Welcome")

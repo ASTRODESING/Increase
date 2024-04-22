@@ -6,17 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.astrodesing.increase.R
 import com.astrodesing.increase.databinding.FragmentDashboardWelcomeBinding
 import com.astrodesing.increase.viewmodels.dashboardviewmodels.DashboardWelcomeFragmentViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class DashboardWelcomeFragment : Fragment() {
@@ -25,7 +23,6 @@ class DashboardWelcomeFragment : Fragment() {
     private lateinit var binding: FragmentDashboardWelcomeBinding
     private val dashboardWelcomeFragmentViewModel: DashboardWelcomeFragmentViewModel by activityViewModels<DashboardWelcomeFragmentViewModel>()
 
-    
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,14 +36,19 @@ class DashboardWelcomeFragment : Fragment() {
     }
 
     private fun collectData() {
-        CoroutineScope(Dispatchers.IO).launch {
+        lifecycleScope.launch(Dispatchers.IO) {
             val baseData = dashboardWelcomeFragmentViewModel.collectUserName()
-            activity?.runOnUiThread(){
-                binding.nombreUsuario.text = baseData[0].userName.toString()
-                if(binding.nombreUsuario.text.toString() =="andrew"){
-                    Log.i()
-                }
-            }
+            var ingresosEsteMes =
+                dashboardWelcomeFragmentViewModel.collectIngresosTotalesMensuales()
+            activity?.runOnUiThread(Runnable {
+                val nombreUsuario = view?.findViewById<TextView>(R.id.nombre_usuario)
+                val ingresosTotalesMensual =
+                    view?.findViewById<TextView>(R.id.ingresosTotalesMensuales)
+
+                nombreUsuario?.text = baseData[0].userName
+                ingresosTotalesMensual?.text = ingresosEsteMes.toString()
+
+            })
         }
 
     }
