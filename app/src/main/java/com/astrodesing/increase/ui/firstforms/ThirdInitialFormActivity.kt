@@ -1,10 +1,11 @@
 package com.astrodesing.increase.ui.firstforms
 
+import android.R
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -15,7 +16,6 @@ import com.astrodesing.increase.viewmodels.ThirdInitialFormViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -62,8 +62,9 @@ class ThirdInitialFormActivity : AppCompatActivity() {
                             diasDeLaSemana = ""
                         )
                     )
-                    runOnUiThread(){
-                        val intent = Intent(this@ThirdInitialFormActivity, DashboardActivity::class.java)
+                    runOnUiThread() {
+                        val intent =
+                            Intent(this@ThirdInitialFormActivity, DashboardActivity::class.java)
                         startActivity(intent)
                     }
 
@@ -82,19 +83,42 @@ class ThirdInitialFormActivity : AppCompatActivity() {
     private fun initLists() {
         CoroutineScope(Dispatchers.IO).launch {
             val modalidades = thirdInitialFormViewModel.getModalidades()
-            runOnUiThread(){
-                var spinnerItems:MutableList<String> = mutableListOf()
-                for (modalidad in modalidades){
+            runOnUiThread() {
+                var spinnerItems: MutableList<String> = mutableListOf()
+                for (modalidad in modalidades) {
                     spinnerItems.add(modalidad.modalidad)
                 }
                 val adapterSpinner =
-                    ArrayAdapter<String>(this@ThirdInitialFormActivity, android.R.layout.simple_spinner_dropdown_item)
+                    ArrayAdapter<String>(
+                        this@ThirdInitialFormActivity,
+                        R.layout.simple_spinner_dropdown_item
+                    )
                 adapterSpinner.addAll(spinnerItems)
+
+                binding.actvGastosMode.onItemSelectedListener =
+                    object : AdapterView.OnItemSelectedListener{
+                        override fun onItemSelected(
+                            p0: AdapterView<*>?,
+                            p1: View?,
+                            p2: Int,
+                            p3: Long
+                        ) {
+                            if (p2 == 2){
+                                binding.checkBoxLayout.visibility = View.VISIBLE
+                            }else{
+                                binding.checkBoxLayout.visibility = View.GONE
+                            }
+                        }
+
+                        override fun onNothingSelected(p0: AdapterView<*>?) {
+
+                        }
+                    }
                 binding.actvIngresosMode.setAdapter(adapterSpinner)
                 binding.actvGastosMode.setAdapter(adapterSpinner)
             }
         }
 
-        binding.actvGastosMode.select
+
     }
 }
