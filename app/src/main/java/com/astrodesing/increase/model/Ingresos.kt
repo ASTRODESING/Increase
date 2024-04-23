@@ -5,11 +5,13 @@ import com.astrodesing.increase.data.entities.EntitiesIngresos
 data class Ingresos(
     var cantidad: Double,
     var categoryId: Int,
-    var description:String,
+    var description: String,
     var fecha: String,
-    var modalidad:String
+    var modalidad: String,
+    var diasDeLaSemana: String
 
 )
+
 fun Ingresos.toDatabase() =
     EntitiesIngresos(
         id = null,
@@ -17,7 +19,9 @@ fun Ingresos.toDatabase() =
         categoryId = categoryId,
         description = description,
         fecha = fecha,
-        modalidad = modalidad)
+        modalidad = modalidad,
+        diasDeLaSemana = diasDeLaSemana
+    )
 
 data class IngresosPorCategoriaDomain(
     var ingreso: Ingresos,

@@ -34,4 +34,11 @@
     <string name="dashboard_Subtitle04">Monto Deuda A Pagar</string>
     <string name="menu_title01">Dashboard</string>
     <string name="menu_title02">Añadir</string>
+    <string name="day1">Lunes</string>
+    <string name="day2">Martes</string>
+    <string name="day3">Miercoles</string>
+    <string name="day4">Jueves</string>
+    <string name="day5">Viernes</string>
+    <string name="day6">Sabado</string>
+    <string name="day7">Domingo</string>
 </resources>

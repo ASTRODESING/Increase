@@ -18,5 +18,11 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
+    <style name="CheckBox" parent="Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:textColor">@color/white_secondary </item>
+        <item name="fontFamily">@font/malmnormalbold</item>
+        <item name="buttonTint">@color/primary</item>
+    </style>
+
     <style name="Theme.Increase" parent="Base.Theme.Increase" />
 </resources>

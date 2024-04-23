@@ -40,7 +40,7 @@ class SecondInitialFormActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.IO).launch{
             secondInitialFormViewModel.addModalidad(EntitiesModalidades(modalidad = "Quincenal"))
             secondInitialFormViewModel.addModalidad(EntitiesModalidades(modalidad = "Mensual"))
-            secondInitialFormViewModel.addModalidad(EntitiesModalidades(modalidad = "Semanal"))
+            secondInitialFormViewModel.addModalidad(EntitiesModalidades(modalidad = "Diario"))
             secondInitialFormViewModel.addModalidad(EntitiesModalidades(modalidad = "Pagos Irregulares"))
             secondInitialFormViewModel.addCategoria(Categorias(nombreCategoria = "Salario"))
         }

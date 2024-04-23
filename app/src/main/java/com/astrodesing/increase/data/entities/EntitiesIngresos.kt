@@ -8,7 +8,6 @@ import androidx.room.PrimaryKey
 import androidx.room.Relation
 import com.astrodesing.increase.model.Categorias
 import com.astrodesing.increase.model.Ingresos
-import com.astrodesing.increase.model.IngresosPorCategoriaDomain
 
 
 @Entity(tableName = "ingresos")
@@ -19,8 +18,10 @@ data class EntitiesIngresos(
     @ColumnInfo(name = "categoria", defaultValue = "0") val categoryId: Int,
     @ColumnInfo(name = "descripción", defaultValue = "Sin descripción") val description: String,
     @ColumnInfo(name = "fecha") val fecha: String,
-    @ColumnInfo(name = "modalidad", defaultValue = "0") val modalidad: String
+    @ColumnInfo(name = "modalidad", defaultValue = "0") val modalidad: String,
+    @ColumnInfo(name = "diasDeLaSemana") val diasDeLaSemana: String
 )
+
 
 fun EntitiesIngresos.toDomain() =
     Ingresos(
@@ -28,7 +29,8 @@ fun EntitiesIngresos.toDomain() =
         categoryId = categoryId,
         description = description,
         fecha = fecha,
-        modalidad = modalidad
+        modalidad = modalidad,
+        diasDeLaSemana = diasDeLaSemana
     )
 
 @Entity(tableName = "categorias", indices = [Index(value = ["nombreCategoria"], unique = true)])

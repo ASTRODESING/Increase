@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.viewModels
@@ -57,7 +58,8 @@ class ThirdInitialFormActivity : AppCompatActivity() {
                             description = "Primer Ingreso",
                             fecha = LocalDateTime.now()
                                 .format(DateTimeFormatter.ofPattern("dd/MM/yyy")),
-                            modalidad = binding.actvIngresosMode.text.toString()
+                            modalidad = binding.actvIngresosMode.text.toString(),
+                            diasDeLaSemana = ""
                         )
                     )
                     runOnUiThread(){
@@ -92,5 +94,7 @@ class ThirdInitialFormActivity : AppCompatActivity() {
                 binding.actvGastosMode.setAdapter(adapterSpinner)
             }
         }
+
+        binding.actvGastosMode.select
     }
 }
