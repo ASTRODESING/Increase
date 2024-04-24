@@ -117,18 +117,96 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:visibility="invisible"
+                android:id="@+id/checkBoxLayOutIngreso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
+
+                <CheckBox
+                    android:id="@+id/checkBoxIngreso1"
+                    android:tag="checkIngreso"
+                    style="@style/CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day1" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxIngreso2"
+                    android:tag="checkIngreso"
+                    style="@style/CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day2"
+                    app:layout_constraintStart_toEndOf="@id/checkBoxIngreso1" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxIngreso3"
+                    android:tag="checkIngreso"
+                    style="@style/CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day3"
+                    app:layout_constraintStart_toEndOf="@id/checkBoxIngreso2" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxIngreso4"
+                    android:tag="checkIngreso"
+                    style="@style/CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day4"
+                    app:layout_constraintStart_toEndOf="@id/checkBoxIngreso3" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxIngreso5"
+                    android:tag="checkIngreso"
+                    style="@style/CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBoxIngreso1" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxIngreso6"
+                    android:tag="checkIngreso"
+                    style="@style/CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day6"
+                    app:layout_constraintStart_toEndOf="@+id/checkBoxIngreso5"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBoxIngreso2" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxIngreso7"
+                    android:tag="checkIngreso"
+                    style="@style/CheckBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/day7"
+                    app:layout_constraintStart_toEndOf="@+id/checkBoxIngreso6"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBoxIngreso3" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
             <TextView
                 android:id="@+id/gasto1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
                 android:fontFamily="@font/malmnormal"
                 android:text="@string/forms_fields3_thirdform"
                 android:textColor="@color/white_secondary"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textInputLayout2" />
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxLayOutIngreso" />
 
 
             <com.google.android.material.textfield.TextInputLayout
@@ -239,8 +317,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:visibility="gone"
-                android:id="@id/checkBoxLayOut"
+                android:visibility="invisible"
+                android:id="@+id/checkBoxLayOutGasto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -250,61 +328,68 @@
 
                 <CheckBox
                     style="@style/CheckBox"
-                    android:id="@+id/checkBox1"
+                    android:tag="checkGasto"
+                    android:id="@+id/checkBoxGasto1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/day1"/>
 
                 <CheckBox
-                    android:id="@+id/checkBox2"
+                    android:id="@+id/checkBoxGasto2"
+                    android:tag="checkGasto"
                     style="@style/CheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/day2"
-                    app:layout_constraintStart_toEndOf="@id/checkBox1" />
+                    app:layout_constraintStart_toEndOf="@id/checkBoxGasto1" />
 
                 <CheckBox
                     style="@style/CheckBox"
-                    android:id="@+id/checkBox3"
+                    android:tag="checkGasto"
+                    android:id="@+id/checkBoxGasto3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toEndOf="@id/checkBox2"
+                    app:layout_constraintStart_toEndOf="@id/checkBoxGasto2"
                     android:text="@string/day3"/>
 
                 <CheckBox
                     style="@style/CheckBox"
-                    android:id="@+id/checkBox4"
+                    android:tag="checkGasto"
+                    android:id="@+id/checkBoxGasto4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintStart_toEndOf="@id/checkBox3"
+                    app:layout_constraintStart_toEndOf="@id/checkBoxGasto3"
                     android:text="@string/day4"/>
 
                 <CheckBox
-                    android:id="@+id/checkBox5"
+                    android:id="@+id/checkBoxGasto5"
+                    android:tag="checkGasto"
                     style="@style/CheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/day5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+                    app:layout_constraintTop_toBottomOf="@+id/checkBoxGasto1" />
 
                 <CheckBox
-                    android:id="@+id/checkBox6"
+                    android:id="@+id/checkBoxGasto6"
+                    android:tag="checkGasto"
                     style="@style/CheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/day6"
-                    app:layout_constraintStart_toEndOf="@+id/checkBox5"
-                    app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+                    app:layout_constraintStart_toEndOf="@+id/checkBoxGasto5"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBoxGasto2" />
 
                 <CheckBox
-                    android:id="@+id/checkBox7"
+                    android:id="@+id/checkBoxGasto7"
+                    android:tag="checkGasto"
                     style="@style/CheckBox"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/day7"
-                    app:layout_constraintStart_toEndOf="@+id/checkBox6"
-                    app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+                    app:layout_constraintStart_toEndOf="@+id/checkBoxGasto6"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBoxGasto3" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
