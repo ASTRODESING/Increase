@@ -53,7 +53,6 @@ dependencies {
     val activityVersion = "1.8.2"
     val fragmentVersion = "1.6.2"
     val navigationUi = "2.7.7"
-    val location ="21.2.0"
 
     //Splash Creen Dependency
     implementation("androidx.core:core-splashscreen:$splashScreenVersion")
@@ -76,9 +75,6 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:$navigationUi")
     // Feature module Support
     implementation("androidx.navigation:navigation-dynamic-features-fragment:$navigationUi")
-    //
-    //Location Tracker
-    implementation("com.google.android.gms:play-services-location:$location")
 
 
 
